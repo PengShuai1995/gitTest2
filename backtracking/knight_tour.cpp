@@ -23,7 +23,7 @@ namespace backtracking{
          * @return true 
          * @return false 
          */
-        template<size_t V>  //size_t 类型表示C中任何对象所能达到的最大长度，它是无符号整数
+        template<size_t V>  
         bool issafe(int x, int y, int mov, const std::array<std::array<int,V>, V> &sol,
                     const std::array<int,V> &xmov, std::array<int,V> &ymov)
         {
@@ -34,7 +34,7 @@ namespace backtracking{
         bool solve(int x,int y,int mov,std::array<std::array<int,V>, V>&sol,const std::array<int, V>& xmov,std::array<int,V>&ymov)
         {
             int k = 0, xnext = 0, ynext = 0;
-            if(mov == V*V)
+            if(mov == V*V) //mov == V*V则表示 所有的格子都已经走过来
             {
                 return true;
             }
@@ -48,7 +48,7 @@ namespace backtracking{
                 {
                     return true;
                 }else{
-                    sol[xnext][ynext] = -1;
+                    sol[xnext][ynext] = -1; // == -1表示走过了
                 }
             }
             return false;          
@@ -71,8 +71,8 @@ int main()
         }
     }
 
-    std::array<int,n> xmov = {2,1,-1,-2,-2,-1,1,2};
-    std::array<int,n> ymov = {1,2,2,1,-1,-2,-2,-1};
+    std::array<int,n> xmov = {2,1,-1,-2,-2,-1, 1, 2};
+    std::array<int,n> ymov = {1,2, 2, 1,-1,-2,-2,-1};
 
     sol[0][0] = 0;
 
