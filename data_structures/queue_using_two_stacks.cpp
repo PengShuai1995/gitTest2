@@ -2,6 +2,9 @@
 #include <iostream>
 #include <stack>
 
+
+
+
 namespace{
 
     template<typename T>
@@ -68,6 +71,6 @@ void queue_test()
     assert(que.pop() == 2);
     assert(que.peek() == 5);
     assert(que.peek() == 5);
-
-
+    std::cout<<"Test #2\n";
+    std::cout<<"Test #3\n";     
 }
